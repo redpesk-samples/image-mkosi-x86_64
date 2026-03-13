@@ -29,6 +29,49 @@ mkosi
 
 The generated image will be available in the `output` directory.
 
+## Boot the built image in QEMU
+
+Please follow [some prerequisites](https://docs.redpesk.bzh/docs/en/master/download/boards/docs/boards/qemu.html#launch-an-x86_64-image) to have what is needed for setting QEMU.
+
+Then you can boot the image with these commands:
+
+```bash
+# For Fedora
+OVMF="/usr/share/OVMF/OVMF_CODE.fd"
+# Uncomment/change for Ubuntu
+#OVMF="/usr/share/qemu/OVMF.fd"
+# Uncomment/change for openSUSE
+#OVMF="/usr/share/qemu/ovmf-x86_64-4m.bin"
+
+PORT_SSH=3333
+
+qemu-system-x86_64 \
+    -hda "output/image.raw" \
+    -enable-kvm -m 2048 \
+    -cpu Skylake-Client-v4 \
+    -smp 4 \
+    -vga virtio \
+    -device virtio-rng-pci \
+    -serial mon:stdio \
+    -net nic \
+    -net user,hostfwd=tcp::$PORT_SSH-:22 \
+    -bios $OVMF
+```
+
+And after you will have your redpesk OS x86 image ready:
+
+```bash
+BdsDxe: loading Boot0002 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1,0x1)/Ata(Primary,Master,0x0)
+BdsDxe: starting Boot0002 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1,0x1)/Ata(Primary,Master,0x0)
+Booting `redpesk-6.12.0-54.baseos.rpcorn.x86_64'
+
+[...]
+
+redpesk Linux corn LTS
+Kernel 6.12.0-54.baseos.rpcorn.x86_64 on an x86_64
+localhost login: 
+```
+
 ## Other examples
 
 You can find more details on the usage of `mkosi` in redpesk by going to [rp-mkosi](https://github.com/redpesk-infra/rp-mkosi) repository.
