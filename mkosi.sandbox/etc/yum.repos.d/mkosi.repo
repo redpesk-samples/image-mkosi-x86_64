@@ -1,14 +1,3 @@
-[redpesk-bsp]
-name=RedPesk BSP
-baseurl=https://download.redpesk.bzh/redpesk-lts/corn-3.0-update/packages/rpi-bsp/$basearch/os/
-enabled=1
-priority=1
-metadata_expire=3h
-repo_gpgcheck=0
-type=rpm
-module_hotfixes=1
-gpgcheck=0
-
 [redpesk-config]
 name=RedPesk Baseos
 baseurl=https://download.redpesk.bzh/redpesk-config/
