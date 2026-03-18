@@ -1,9 +1,13 @@
 # Build your redpesk OS image (x86_64) using mkosi
 
+redpesk factory allows to create redpesk OS image with your custom applications and settings based on mkosi tool.
+
+The full documentation to create an image is available online at [docs.redpesk.bzh](https://docs.redpesk.bzh/docs/en/master/redpesk-factory/images-management/01-create-an-image.html) section `Images management`.
+
 mkosi is a systemd tool that generates disk images [https://mkosi.systemd.io](https://mkosi.systemd.io).
 
 For redpesk OS, the main goal is that it uses systemd-repart for making gpt
-partitionning without any priviledge using libfdisk [https://www.freedesktop.org/software/systemd/man/latest/systemd-repart.html](https://www.freedesktop.org/software/systemd/man/latest/systemd-repart.html).
+partitioning without any privilege using libfdisk [https://www.freedesktop.org/software/systemd/man/latest/systemd-repart.html](https://www.freedesktop.org/software/systemd/man/latest/systemd-repart.html).
 
 Have a look on the man page for more information:
 
@@ -69,7 +73,7 @@ Booting `redpesk-6.12.0-54.baseos.rpcorn.x86_64'
 
 redpesk Linux corn LTS
 Kernel 6.12.0-54.baseos.rpcorn.x86_64 on an x86_64
-localhost login: 
+localhost login:
 ```
 
 ## Other examples
