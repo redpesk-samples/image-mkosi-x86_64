@@ -28,7 +28,7 @@ There is only one configuration file and no profiles.
 To build a redpeskOS image for x86_64 targets, run:
 
 ```bash
-mkosi
+mkosi -I mkosi-generic.conf --debug --force --debug-workspace
 ```
 
 The generated image will be available in the `output` directory.
