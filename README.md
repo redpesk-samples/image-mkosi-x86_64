@@ -1,5 +1,7 @@
 # Build your redpesk OS image (x86_64) using mkosi
 
+> NOTE: there are some boot issues for x86_64 mkosi images regarding Grub. This repository will be updated when fixed.
+
 redpesk factory allows to create redpesk OS image with your custom applications and settings based on mkosi tool.
 
 The full documentation to create an image is available online at [docs.redpesk.bzh](https://docs.redpesk.bzh/docs/en/master/redpesk-factory/images-management/01-create-an-image.html) section `Images management`.
@@ -25,7 +27,7 @@ In this repository, you will find a **flat configuration** for generating a redp
 The idea is to make it easier to understand and to modify than in the root configuration of the repository.
 There is only one configuration file and no profiles.
 
-To build a redpeskOS image for x86_64 targets, run:
+To build a redpesk OS image for x86_64 targets, run:
 
 ```bash
 mkosi -I mkosi-generic.conf --debug --force --debug-workspace
