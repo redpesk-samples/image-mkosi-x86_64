@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# DO NOT DELETE - these outputs are necessary for a build in redpesk Factory
+# If the compression of the image isn't enabled, it will increase your build time
+
 [ "$REDPESK_BYPASS_POSTOUTPUT" ] && exit 0
 
 # redpesk postoutput: bmap/compress/sha256
